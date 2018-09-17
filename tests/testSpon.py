@@ -34,7 +34,7 @@ class TestCrawl(unittest.TestCase):
             crawler.addVisitor(TitleVisitor())
             crawler.parse()
         except BaseException:
-            self.fail("No Exception should be thrown when retrieving title")
+            self.fail("No Exception should be thrown when retrieving all")
 
     def test_single_url(self):
         crawler = crawl.SponCrawler()

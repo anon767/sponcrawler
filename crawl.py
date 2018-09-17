@@ -1,7 +1,5 @@
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
-import itertools
-
 
 class SponCrawler():
     start_url = "http://spiegel.de"
