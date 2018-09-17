@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 
+
 class SponCrawler():
     start_url = "http://spiegel.de"
     articles = {}
@@ -11,7 +12,7 @@ class SponCrawler():
         self.page = urlopen(self.start_url)
         self.soup = BeautifulSoup(self.page, 'html.parser')
 
-    def addVisitor(self, visitor):
+    def add_visitor(self, visitor):
         """Adds Visitor"""
         self.visitors.append(visitor)
 
@@ -22,10 +23,10 @@ class SponCrawler():
             url = x.find('a').get('href')
             if not str.startswith(url, "http"):
                 url = self.start_url + url
-            self.articles[url] = self.parseUrl(url)
+            self.articles[url] = self.parse_url(url)
         return self.articles
 
-    def parseUrl(self, url):
+    def parse_url(self, url):
         """Parses URL and calls Spon Visitors and creates new Object"""
 
         print(url)
